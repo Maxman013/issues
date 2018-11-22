@@ -2,12 +2,24 @@
 <html>
 <head>
 	<title>Bot Issues</title>
-	<style>
-		* {font-family:Futura;}
-	</style>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-	<h1>Known Bot Issues</h1>
+<div class="w3-container w3-cyan" onmouseover="hideBots()">
+    <h1 style="text-align:center" onclick="href(-1)" style="cursor:pointer">Maximum Bots</h1>
+</div>
+<div class="w3-bar">
+  <button class="w3-bar-item w3-button w3-light-blue" style="width:25%" onclick="href(0)" onmouseover="showBots()">Bots</button>
+  <button class="w3-bar-item w3-button w3-light-blue" style="width:25%" onclick="href(1)" onmouseover="hideBots()">Access Token Tool</button>
+  <button class="w3-bar-item w3-button w3-light-blue" style="width:25%" onclick="href(2)" onmouseover="hideBots()">Current Bot Issues</button>
+  <button class="w3-bar-item w3-button w3-light-blue" style="width:25%" onclick="href(5)" onmouseover="hideBots()">Resolved Bot Issues</button>
+</div>
+<div id="botNav" class="w3-bar" style="display:none">
+    <button class="w3-bar-item w3-button w3-gray" onclick="href(3)" style="width:25%">PaintBot</button>
+    <button class="w3-bar-item w3-button w3-gray" onclick="href(4)" style="width:25%">LossBot 12250</button>
+    <button class="w3-bar-item w3-button w3-gray" onclick="href(6)" style="width:25%">CountryBot 0208</button>
+    <button class="w3-bar-item w3-button w3-gray" onclick="href(7)" style="width:25%">CommentBot 2005</button>
+</div><br>
 	<p>This page documents all known issues for the bots I admin. If you know of any issues that I have not included in this list, let me know by messaging the page!</p>
 
 	<h2 style="color:green"><img src=https://image.freepik.com/free-icon/gear_318-56262.jpg width=60px height=60px /> Global Bot Status - UP</h2>
@@ -40,5 +52,49 @@
 	</ul>
 
 	<p>For resolved issues, visit <a href="https://maxman013.github.io/resolved">here</a>.</p>
+
+	  <script>
+      function showBots() {
+          document.getElementById("botNav").style.display = "block";
+      };
+      
+      function hideBots() {
+          document.getElementById("botNav").style.display = "none";
+      };
+      
+      function href(num) {
+          var link = "";
+          switch (num) {
+          case 0:
+              link = "bots";
+              break;
+          case 1:
+              link = "token";
+              break;
+          case 2:
+              link = "issues";
+              break;
+          case 3:
+              link = "paintbot";
+              break;
+          case 4:
+              link = "lossbot";
+              break;
+          case 5:
+              link = "resolved";
+              break;
+          case 6:
+              link = "countrybot";
+              break;
+          case 7:
+              link = "commentbot";
+              break;
+          default:
+          	  break;
+          }
+          
+          window.open("https://maxman013.github.io/" + link, "_self");
+      };
+  </script>
 </body>
 </html>
